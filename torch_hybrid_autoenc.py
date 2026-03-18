@@ -62,7 +62,7 @@ class ClassicalLatentHead(torch.nn.Module):
             #sys.exit()
             return out         
         elif self.topology=='S2xRP2':
-            out=torch.cat([embed_rp2(inputs[:,:3]),embed_rp2(inputs[:,3:])],dim=-1)
+            out=torch.cat([embed_s2(inputs[:,:3]),embed_rp2(inputs[:,3:])],dim=-1)
             return out    
         elif self.topology=='RP2xRP2':
             out=torch.cat([embed_rp2(inputs[:,:3]),embed_rp2(inputs[:,3:])],dim=-1)
